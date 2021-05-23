@@ -2,10 +2,10 @@ package laposte.com.main;
 
 import org.openqa.selenium.WebDriver;
 
-import laposte.com.blacktopparti.PartieTop;
-import laposte.com.body.PartieBody;
 import laposte.com.conf.Configuration;
-import laposte.com.footer.PartieFooter;
+import laposte.com.partiebody.PartieBody;
+import laposte.com.partiefooter.PartieFooter;
+import laposte.com.partietop.PartieTop;
 
 public class Main {
 	static WebDriver driver;

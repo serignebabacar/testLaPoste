@@ -1,4 +1,4 @@
-package laposte.com.blacktopparti;
+package laposte.com.partietop;
 
 import java.util.List;
 

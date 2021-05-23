@@ -1,4 +1,4 @@
-package laposte.com.body;
+package laposte.com.partiebody;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
