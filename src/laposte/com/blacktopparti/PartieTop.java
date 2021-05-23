@@ -9,13 +9,13 @@ import org.openqa.selenium.interactions.Actions;
 
 import laposte.com.communs.Communs;
 
-public class BlackTopParti {
+public class PartieTop {
 	private String linkFindStore = "https://jsapps.c4a0pho0ft-laposteaz1-s1-public.model-t.cc.commerce.ondemand.com/store-finder";
 	private String xpathFindStore = "//a[@href='/store-finder']";
 
 	public void testBrands(WebDriver driver) {
 		driver.get(Communs.URL);
-		driver.findElements(By.xpath("//cx-icon[@class='cx-icon fas fa-angle-down']")).get(0).click();
+		Communs.click(driver.findElements(By.xpath("//cx-icon[@class='cx-icon fas fa-angle-down']")).get(0));
 		Actions builder = new Actions(driver);
 		moveToElement(driver, builder, "//div/nav/cx-generic-link/a[@role='link']", 0, 10);
 	}
@@ -29,18 +29,21 @@ public class BlackTopParti {
 	}
 
 	public void testDigitalCameras(WebDriver driver) {
-		driver.manage().window().maximize();
-		driver.get(Communs.URL);
+
 		driver.findElements(By.xpath("//cx-icon[@class='cx-icon fas fa-angle-down']")).get(3).click();
 		Actions builder = new Actions(driver);
 		moveToElement(driver, builder, "//cx-generic-link/a[@role='link']", 16, 2);
 	}
 
-	public void testFindStore(WebDriver driver) {
-		driver.manage().window().maximize();
-		driver.get(Communs.URL);
-		driver.findElement(By.xpath(xpathFindStore)).click();
-		System.out.println(linkFindStore.equals(driver.getCurrentUrl()));
+	public void testLinkFindStore(WebDriver driver) {
+		// Communs.click(Communs.find(driver,By.xpath(xpathFindStore)));
+		driver.findElement(By.xpath("//a[@href='/store-finder']")).click();
+		driver.navigate().back();
+	}
+
+	public void testLogin(WebDriver driver) {
+		driver.findElement(By.xpath("//a[@href='/login']")).click();
+		System.out.println(driver.getTitle().equals("Se connecter à La Poste"));
 		driver.navigate().back();
 	}
 }
