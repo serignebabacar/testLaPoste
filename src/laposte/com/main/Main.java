@@ -10,7 +10,7 @@ import laposte.com.partietop.PartieTop;
 public class Main {
 	static WebDriver driver;
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 
 		driver = Configuration.configuration();
 
@@ -19,13 +19,15 @@ public class Main {
 		PartieFooter partieFooter = new PartieFooter();
 
 		partieTop.testBrands(driver);
-		// blackTopParti.testLinkFindStore(driver);
+		partieTop.testLinkFindStore(driver);
 		partieTop.testLogin(driver);
 
 		partieBody.testNosMeilleursProduits(driver);
 		partieBody.testNouveautes(driver);
+		partieBody.testSearch(driver);
 
 		partieFooter.testFooter(driver);
+		
 
 		driver.close();
 		driver.quit();
