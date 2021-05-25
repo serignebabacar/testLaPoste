@@ -11,6 +11,6 @@ public class PartieFooter {
 
 	public void testFooter(WebDriver driver) {
 		System.out.println(Communs.isEqualText(driver.findElement(By.xpath(xpathLabelSapCommerceCloud)),
-				"SAP COMMERCE CLOUD"));
+				"SAP COMMERC E CLOUD"));
 	}
 }
