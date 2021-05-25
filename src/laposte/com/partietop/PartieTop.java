@@ -34,6 +34,7 @@ public class PartieTop {
 		Communs.click(Communs.find(driver, By.xpath(xpathLinkFindStore)));
 		// driver.findElement(By.xpath(xpathLinkFindStore)).click();
 		Thread.sleep(2000);
+		//commentaire
 		System.out.println(driver.getTitle().equals("StoreFinder"));
 		driver.navigate().back();
 	}

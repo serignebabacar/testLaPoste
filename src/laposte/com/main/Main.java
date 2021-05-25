@@ -21,7 +21,7 @@ public class Main {
 		partieTop.testBrands(driver);
 		partieTop.testLinkFindStore(driver);
 		partieTop.testLogin(driver);
-
+		//commentaire
 		partieBody.testNosMeilleursProduits(driver);
 		partieBody.testNouveautes(driver);
 		partieBody.testSearch(driver);
