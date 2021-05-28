@@ -17,7 +17,7 @@ public class PartieTop {
 
 	public void testBrands(WebDriver driver) {
 		driver.get(Communs.URL);
-		Communs.click(driver.findElements(By.xpath(xpathLinkBrands)).get(0));
+		Communs.click(driver.findElements(By.xpath(xpathLinkBrands)).get(1));
 		Actions builder = new Actions(driver);
 		moveToElement(driver, builder, xptathLink, 0, 10);
 	}
