@@ -3,14 +3,16 @@ package laposte.com.partiefooter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import laposte.com.communs.Communs;
-
 public class PartieFooter {
+	WebDriver driver;
 	
-	private static  String xpathLabelSapCommerceCloud = "//h5[@aria-label='SAP Commerce Cloud']";
+	By xpathLabelSapCommerceCloud = By.xpath("//h5[@aria-label='Mieux nous connaître ']");
 
-	public void testFooter(WebDriver driver) {
-		System.out.println(Communs.isEqualText(driver.findElement(By.xpath(xpathLabelSapCommerceCloud)),
-				"SAP COMMERCE CLOUD"));
+	public PartieFooter(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public String getTextFooter() {
+		return driver.findElement(xpathLabelSapCommerceCloud).getText();
 	}
 }
