@@ -9,64 +9,78 @@ import laposte.com.partietop.PartieTop;
 
 public class Main {
 	static WebDriver driver;
+	static PartieTop partieTop;
+	static PartieBody partieBody;
+	static PartieFooter partieFooter;
 
 	public static void main(String[] args) throws InterruptedException {
-		PartieTop partieTop = new PartieTop();
-		PartieBody partieBody = new PartieBody();
-		PartieFooter partieFooter = new PartieFooter();
-		scenario1(partieTop, partieBody, partieFooter);
-		scenario2(partieTop, partieFooter,partieBody);
-		scenario3(partieTop, partieBody);
-		scenario4(partieTop, partieFooter);
-		scenario5(partieTop, partieBody, partieFooter);
+		scenario1();
+		scenario2();
+		scenario3();
+		scenario4();
+		scenario5();
 	}
 
-	private static void scenario1(PartieTop partieTop, PartieBody partieBody, PartieFooter partieFooter)
-			throws InterruptedException {
-		driver = Configuration.configuration();
-		partieTop.testLogin(driver);
-		partieTop.testLinkFindStore(driver);
-		partieBody.testNosMeilleursProduits(driver);
-		partieBody.testNouveautes(driver);
-		partieFooter.testFooter(driver);
+	private static void scenario1() throws InterruptedException {
+		getInstanceDriver();
+		instanciationParties();
+		partieTop.testLogin();
+		partieTop.testLinkFindStore();
+		partieBody.testNosMeilleursProduits();
+		partieBody.testNouveautes();
+		System.out.println(partieFooter.getTextFooter().equals("MIEUX NOUS CONNAÎTRE"));
 		driver.close();
 	}
 
-	private static void scenario2(PartieTop partieTop, PartieFooter partieFooter, PartieBody partieBody)
-			throws InterruptedException {
-		driver = Configuration.configuration();
-		partieFooter.testFooter(driver);
-		partieBody.testNosMeilleursProduits(driver);
-		partieBody.testNouveautes(driver);
-		partieTop.testLogin(driver);
-		partieTop.testLinkFindStore(driver);
+	private static void instanciationParties() {
+		partieTop = new PartieTop(driver);
+		partieBody = new PartieBody(driver);
+		partieFooter = new PartieFooter(driver);
+	}
+
+	private static void scenario2() throws InterruptedException {
+		getInstanceDriver();
+		instanciationParties();
+		System.out.println(partieFooter.getTextFooter().equals("MIEUX NOUS CONNAÎTRE"));
+		partieBody.testNosMeilleursProduits();
+		partieBody.testNouveautes();
+		partieTop.testLogin();
+		partieTop.testLinkFindStore();
 		driver.close();
 	}
 
-	private static void scenario3(PartieTop partieTop, PartieBody partieBody) throws InterruptedException {
-		driver = Configuration.configuration();
-		partieTop.testLogin(driver);
-		partieTop.testLinkFindStore(driver);
-		partieBody.testNosMeilleursProduits(driver);
-		partieBody.testNouveautes(driver);
+	private static void scenario3() throws InterruptedException {
+		getInstanceDriver();
+		instanciationParties();
+		partieTop.testLogin();
+		partieTop.testLinkFindStore();
+		partieBody.testNosMeilleursProduits();
+		partieBody.testNouveautes();
 		driver.close();
 
 	}
 
-	private static void scenario4(PartieTop partieTop, PartieFooter partieFooter) throws InterruptedException {
-		driver = Configuration.configuration();
-		partieTop.testLogin(driver);
-		partieTop.testLinkFindStore(driver);
-		partieFooter.testFooter(driver);
+	private static void scenario4() throws InterruptedException {
+		getInstanceDriver();
+		instanciationParties();
+		partieTop.testLogin();
+		partieTop.testLinkFindStore();
+		System.out.println(partieFooter.getTextFooter().equals("MIEUX NOUS CONNAÎTRE"));
 		driver.close();
 	}
-	private static void scenario5(PartieTop partieTop,PartieBody partieBody, PartieFooter partieFooter) throws InterruptedException {
+
+	private static void getInstanceDriver() {
 		driver = Configuration.configuration();
-		partieFooter.testFooter(driver);
-		partieBody.testNosMeilleursProduits(driver);
-		partieBody.testNouveautes(driver);
-		partieTop.testLogin(driver);
-		partieTop.testLinkFindStore(driver);
+	}
+
+	private static void scenario5() throws InterruptedException {
+		getInstanceDriver();
+		instanciationParties();
+		System.out.println(partieFooter.getTextFooter().equals("MIEUX NOUS CONNAÎTRE"));
+		partieBody.testNosMeilleursProduits();
+		partieBody.testNouveautes();
+		partieTop.testLogin();
+		partieTop.testLinkFindStore();
 		driver.close();
 	}
 }

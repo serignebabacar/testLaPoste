@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-06-05T18:15:08 CEST" name="Default suite" finished-at="2021-06-05T18:15:34 CEST" duration-ms="26376">
+    <groups>
+    </groups>
+    <test started-at="2021-06-05T18:15:08 CEST" name="Default test" finished-at="2021-06-05T18:15:34 CEST" duration-ms="26376">
+      <class name="laposte.com.test.TestPagePoste">
+        <test-method is-config="true" signature="init()[pri:0, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:08 CEST" name="init" finished-at="2021-06-05T18:15:18 CEST" duration-ms="9868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="testLogin()[pri:1, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:18 CEST" name="testLogin" finished-at="2021-06-05T18:15:23 CEST" duration-ms="4906" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogin -->
+        <test-method is-config="true" signature="close()[pri:0, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:23 CEST" name="close" finished-at="2021-06-05T18:15:24 CEST" duration-ms="904" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+        <test-method is-config="true" signature="init()[pri:0, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:24 CEST" name="init" finished-at="2021-06-05T18:15:32 CEST" duration-ms="7868" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- init -->
+        <test-method signature="testFindStore()[pri:2, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:32 CEST" name="testFindStore" finished-at="2021-06-05T18:15:34 CEST" duration-ms="2428" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testFindStore -->
+        <test-method is-config="true" signature="close()[pri:0, instance:laposte.com.test.TestPagePoste@41c2284a]" started-at="2021-06-05T18:15:34 CEST" name="close" finished-at="2021-06-05T18:15:34 CEST" duration-ms="154" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close -->
+      </class> <!-- laposte.com.test.TestPagePoste -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

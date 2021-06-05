@@ -10,14 +10,19 @@ import org.openqa.selenium.interactions.Actions;
 import laposte.com.communs.Communs;
 
 public class PartieTop {
-	private String xpathLinkFindStore = "//a[@href='/store-finder']";
-	private String xpathLinkBrands = "//cx-icon[@class='cx-icon fas fa-angle-down']";
+	By xpathLinkLogin = By.xpath("//a[@href='/login']");
+	By xpathLinkFindStor = By.xpath("//a[@href='/store-finder']");
+	By xpathLinkBrands = By.xpath("//cx-icon[@class='cx-icon fas fa-angle-down']");
 	private String xptathLink = "//div/nav/cx-generic-link/a[@role='link']";
-	private String xpathLinkLogin = "//a[@href='/login']";
+	WebDriver driver;
 
-	public void testBrands(WebDriver driver) {
+	public PartieTop(WebDriver driver) {
+		this.driver = driver;
+	}
+
+	public void testBrands() {
 		driver.get(Communs.URL);
-		Communs.click(driver.findElements(By.xpath(xpathLinkBrands)).get(1));
+		driver.findElements(xpathLinkBrands).get(1).click();
 		Actions builder = new Actions(driver);
 		moveToElement(driver, builder, xptathLink, 0, 10);
 	}
@@ -30,19 +35,14 @@ public class PartieTop {
 		}
 	}
 
-	public void testLinkFindStore(WebDriver driver) throws InterruptedException {
-		Communs.click(Communs.find(driver, By.xpath(xpathLinkFindStore)));
-		// driver.findElement(By.xpath(xpathLinkFindStore)).click();
+	public void testLinkFindStore() throws InterruptedException {
+		driver.findElement(xpathLinkFindStor).click();
 		Thread.sleep(2000);
-		//commentaire
-		System.out.println(driver.getTitle().equals("StoreFinder"));
-		driver.navigate().back();
+		
 	}
 
-	public void testLogin(WebDriver driver) {
-		Communs.click(Communs.find(driver, By.xpath(xpathLinkLogin)));
-		// driver.findElement(By.xpath(xpathLinkLogin)).click();
-		System.out.println(driver.getTitle().equals("Se connecter à La Poste"));
+	public void testLogin() {
+		driver.findElement(xpathLinkLogin).click();
 		driver.navigate().back();
 	}
 }

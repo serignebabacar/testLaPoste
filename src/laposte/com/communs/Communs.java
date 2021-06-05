@@ -14,10 +14,12 @@ public class Communs {
 	public boolean isDisplayElement(WebElement webElement) {
 		return webElement.isDisplayed();
 	}
-	public static WebElement find(WebDriver driver,By locator) {
+
+	public static WebElement find(WebDriver driver, By locator) {
 		return driver.findElement(locator);
 	}
-	public static boolean isEqualText(WebElement element,String text) {
+
+	public static boolean isEqualText(WebElement element, String text) {
 		return element.getText().equals(text);
 	}
 }
