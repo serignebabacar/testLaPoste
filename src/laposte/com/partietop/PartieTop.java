@@ -37,12 +37,10 @@ public class PartieTop {
 
 	public void testLinkFindStore() throws InterruptedException {
 		driver.findElement(xpathLinkFindStor).click();
-		Thread.sleep(2000);
-		
+
 	}
 
 	public void testLogin() {
 		driver.findElement(xpathLinkLogin).click();
-		driver.navigate().back();
 	}
 }
